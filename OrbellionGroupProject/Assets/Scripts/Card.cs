@@ -1,45 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
+ [System.Serializable]
 
 public class Card
 {
+    /* --- Used by all Cards ---*/
     public int id;
     public string cardName;
+    public string cardDescription;
+    public string cardType; // Make into ENUM
+    public Sprite cardArtwork;
+
+    /* --- Used by Regular Cards ---*/
     public int energyCost;
+
+    /* --- Used by Hellion --- */
     public int physicalDamage;
     public int elementalDamage;
-    public string cardDescription;
-    public int hp; // For Hellions
-    public bool primary; //For Hellions
+    public int hp;
+    public bool primary;
+    
 
 
     public Card(){}
 
-    public Card(int Id, string CardName, int EnergyCost, int PhysicalDamage, int ElementalDamage, string CardDescription)
+    public Card(int Id, string CardName, int EnergyCost, string CardDescription, string CardType, Sprite CardArtwork)
     {
         id = Id;
         cardName = CardName;
         energyCost = EnergyCost;
-        physicalDamage = PhysicalDamage;
-        elementalDamage = ElementalDamage;
         cardDescription = CardDescription;
+        cardType = CardType;
     }
-
-    /*
-    public HellionCard(){}
-
-    public HellionCard(int Id, string CardName, int Hp, int EnergyCost int PhysicalDamage, int ElementalDamage, string CardDescription, boolean Primary)
-    {
-        id = Id;
-        cardName = CardName;
-        hp = Hp;
-        energyCost = EnergyCost;
-        physicalDamage = PhysicalDamage;
-        elementalDamage = ElementalDamage;
-        cardDescription = CardDescription;
-        primary = Primary;
-    }
-    */
 }
